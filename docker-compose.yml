@@ -1,0 +1,15 @@
+version: '3'
+services:
+  api:
+    build:
+      context: .
+    volumes:
+      - ./src:/api/src
+    # ports:
+    #   - 8000:8000
+    tty: true
+
+  nginx:
+    build: ./nginx
+    ports:
+      - "1234:1234"
